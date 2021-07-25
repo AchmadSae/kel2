@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Klinik" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_biaya" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select *from informasi_biaya where id_biaya = $P{id_biaya}]]>
+	</queryString>
+	<field name="id_biaya" class="java.lang.String"/>
+	<field name="id_poliumum" class="java.lang.String"/>
+	<field name="id_poligigi" class="java.lang.String"/>
+	<field name="id_bidan" class="java.lang.String"/>
+	<field name="nama_pasien" class="java.lang.String"/>
+	<field name="tgl_berobat" class="java.sql.Date"/>
+	<field name="nama_dokter" class="java.lang.String"/>
+	<field name="biaya_layanan" class="java.lang.Integer"/>
+	<field name="biaya_obat" class="java.lang.Integer"/>
+	<field name="total" class="java.lang.Integer"/>
+	<field name="catatan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="315" y="10" width="181" height="40" forecolor="#66FF66"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KLINIK PEKAPURAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="40" width="488" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Jalan Raya Pekapuran No. 2 Rt 001 Rw 006 Kelurahan Curug , Kecamatan Cimanggis, Kota Depok]]></text>
+			</staticText>
+			<image>
+				<reportElement x="14" y="-4" width="141" height="74"/>
+				<imageExpression><![CDATA["E:\\icon\\Logo Kementerian Kesehatan (Kemenkes) Republik Indonesia (PNG-480p) - FileVector69.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="70" width="802" height="4"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="315" y="15" width="162" height="20"/>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[STRUK PEMBAYARAN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="10" width="83" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{id_poliumum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="205" y="10" width="75" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{id_poligigi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="10" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{id_bidan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Pelayanan =]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="254" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="0" width="96" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="127" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nama_pasien}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="43" width="109" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Berobat]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="127" y="43" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tgl_berobat}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="280" y="5" width="1" height="150"/>
+			</line>
+			<textField>
+				<reportElement x="304" y="43" width="475" height="100"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{catatan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="304" y="5" width="100" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CATATAN  =]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="802" height="4"/>
+			</line>
+			<textField>
+				<reportElement x="139" y="155" width="129" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{biaya_layanan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="14" y="155" width="124" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Biaya Layanan        Rp.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="139" y="200" width="130" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{biaya_obat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="14" y="200" width="112" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Biaya Obat            Rp.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="165" width="169" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL PEMBAYARAN =    RP.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="496" y="165" width="151" height="36"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="4" y="155" width="802" height="4"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="110" splitType="Stretch">
+			<staticText>
+				<reportElement x="508" y="69" width="100" height="20"/>
+				<textElement>
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[PETUGAS KLINIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="508" y="0" width="124" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Depok,             2021]]></text>
+			</staticText>
+			<line>
+				<reportElement x="508" y="68" width="109" height="1"/>
+			</line>
+			<image isLazy="true">
+				<reportElement x="14" y="0" width="451" height="91"/>
+				<imageExpression><![CDATA["E:\\icon\\d.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
