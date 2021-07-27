@@ -562,15 +562,8 @@ public class Laporan_DataObat extends javax.swing.JInternalFrame {
                 Statement stat = Conn.createStatement();
                 
                 try{
-                    String report = "A:\\temporary_project\\NetBeansProjects\\Kel2\\src\\KlinikPekapuran\\report2.jrxml";
-//                    HashMap hs = new HashMap();
-//                    //menggambil parameter
-////                    hs.put("id_biaya", id_biaya.getText());
-//                    JasperReport JRpt = JasperCompileManager.compileReport(report);
-//                    JasperPrint JRprint = JasperFillManager.fillReport(JRpt, hs, Conn);
-//                    JasperViewer.viewReport(JRprint, false);
+                    String report = "A:\\temporary_project\\NetBeansProjects\\Kel2\\src\\KlinikPekapuran\\report\\report2.jrxml";
 
-                    //syntax untuk print seluruh data 
                     
                     JasperReport jr = JasperCompileManager.compileReport(report);
                     JasperPrint jp = JasperFillManager.fillReport(jr, null, Conn);

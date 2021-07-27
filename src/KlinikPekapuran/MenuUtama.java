@@ -27,6 +27,7 @@ public class MenuUtama extends javax.swing.JFrame {
     Laporan_DataPasien_PoliGigi rPoliGigi;
     Laporan_DataPasien_Bidan rBidan;
     Laporan_DataObat rObat;
+    Laporan_karyawan rKaryawan;
     
     
     
@@ -45,7 +46,7 @@ public class MenuUtama extends javax.swing.JFrame {
         rPoliGigi= new Laporan_DataPasien_PoliGigi();
         rBidan= new Laporan_DataPasien_Bidan();
         rObat = new Laporan_DataObat();
-        
+        rKaryawan = new Laporan_karyawan();
     }
 
     /**
@@ -370,6 +371,7 @@ public class MenuUtama extends javax.swing.JFrame {
         rObat.dispose();
         rPoliGigi.dispose();
         rBidan.dispose();
+        rKaryawan.dispose();
         }
     }//GEN-LAST:event_menuFasilitasActionPerformed
 
@@ -392,7 +394,8 @@ public class MenuUtama extends javax.swing.JFrame {
         rPoliUmum.dispose();
         rObat.dispose();
         rPoliGigi.dispose();
-        rBidan.dispose();         
+        rBidan.dispose();
+        rKaryawan.dispose();
         }
     }//GEN-LAST:event_InformasiUmumActionPerformed
 
@@ -412,6 +415,7 @@ public class MenuUtama extends javax.swing.JFrame {
             rPoliGigi.dispose();
             rBidan.dispose();          
             Biaya.dispose();
+            rKaryawan.dispose();
         }
     }//GEN-LAST:event_menuPendaftaranActionPerformed
 
@@ -431,7 +435,8 @@ public class MenuUtama extends javax.swing.JFrame {
             rPoliUmum.dispose();
             rObat.dispose();
             rPoliGigi.dispose();
-            rBidan.dispose();           
+            rBidan.dispose();   
+            rKaryawan.dispose();
 
         }
     }//GEN-LAST:event_menuPoliUmumActionPerformed
@@ -451,6 +456,7 @@ public class MenuUtama extends javax.swing.JFrame {
             rPoliGigi.dispose();
             rBidan.dispose();          
             Biaya.dispose();
+            rKaryawan.dispose();
         }
     }//GEN-LAST:event_menuPoliGigiActionPerformed
 
@@ -469,6 +475,7 @@ public class MenuUtama extends javax.swing.JFrame {
             rPoliGigi.dispose();
             rBidan.dispose();          
             Biaya.dispose();
+            rKaryawan.dispose();
         }
     }//GEN-LAST:event_menuBidanActionPerformed
 
@@ -490,6 +497,7 @@ public class MenuUtama extends javax.swing.JFrame {
             rPoliGigi.dispose();
             rBidan.dispose();          
             Biaya.dispose();
+            rKaryawan.dispose();
         }
     }//GEN-LAST:event_DataPoliUmumActionPerformed
 
@@ -509,7 +517,8 @@ public class MenuUtama extends javax.swing.JFrame {
             
             rObat.dispose();
             rBidan.dispose();          
-                Biaya.dispose();
+            Biaya.dispose();
+            rKaryawan.dispose();
         }
     }//GEN-LAST:event_DataPoliGigiActionPerformed
 
@@ -529,6 +538,7 @@ public class MenuUtama extends javax.swing.JFrame {
         rObat.dispose();
         rPoliGigi.dispose();
         rBidan.dispose();
+        rKaryawan.dispose();
         }
     }//GEN-LAST:event_MenuBiayaMouseClicked
 
@@ -548,7 +558,8 @@ public class MenuUtama extends javax.swing.JFrame {
             
             rPoliGigi.dispose();
             rObat.dispose();
-                Biaya.dispose();
+            Biaya.dispose();
+            rKaryawan.dispose();
         }
     }//GEN-LAST:event_DataPelyananBidanActionPerformed
 
@@ -568,12 +579,29 @@ public class MenuUtama extends javax.swing.JFrame {
             
             rPoliGigi.dispose();
             rBidan.dispose();          
-                Biaya.dispose();
+            Biaya.dispose();
         }
     }//GEN-LAST:event_DataObatActionPerformed
 
     private void karyawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_karyawanActionPerformed
-        // TODO add your handling code here:
+         if(!rKaryawan.isVisible()){
+            jDesktopPane1.add(rKaryawan);
+            rKaryawan.show();
+            setExtendedState(JFrame.MAXIMIZED_BOTH);
+            
+            Informasi.dispose();
+            Pendaftaran.dispose();
+            Fasilitas.dispose();
+            PoliUmum.dispose();
+            PoliGigi.dispose();
+            Bidan.dispose();
+            
+            rPoliUmum.dispose();
+            rPoliGigi.dispose();
+            rBidan.dispose();          
+            Biaya.dispose();
+            rObat.dispose();
+        }
     }//GEN-LAST:event_karyawanActionPerformed
 
     /**

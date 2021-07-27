@@ -819,7 +819,7 @@ public class Biaya extends javax.swing.JInternalFrame {
                 Statement stat = Conn.createStatement();
                 
                 try{
-                    String report = "A:\\temporary_project\\NetBeansProjects\\Kel2\\src\\KlinikPekapuran\\report1.jrxml";
+                    String report = "A:\\temporary_project\\NetBeansProjects\\Kel2\\src\\KlinikPekapuran\\report\\report1.jrxml";
                     HashMap hs = new HashMap();
                     //menggambil parameter
                     hs.put("id_biaya", id_biaya.getText());
