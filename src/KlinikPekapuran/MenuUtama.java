@@ -23,9 +23,9 @@ public class MenuUtama extends javax.swing.JFrame {
     
     Biaya Biaya;
     
-    Laporan_DataPasien_PoliUmum rPoliUmum;
-    Laporan_DataPasien_PoliGigi rPoliGigi;
-    Laporan_DataPasien_Bidan rBidan;
+    Laporan_poliUmum rPoliUmum;
+    Laporan_poligigi rPoliGigi;
+    Laporan_bidan rBidan;
     Laporan_DataObat rObat;
     Laporan_karyawan rKaryawan;
     
@@ -42,9 +42,9 @@ public class MenuUtama extends javax.swing.JFrame {
         
         Biaya = new Biaya();
         
-        rPoliUmum= new Laporan_DataPasien_PoliUmum();
-        rPoliGigi= new Laporan_DataPasien_PoliGigi();
-        rBidan= new Laporan_DataPasien_Bidan();
+        rPoliUmum= new Laporan_poliUmum();
+        rPoliGigi= new Laporan_poligigi();
+        rBidan= new Laporan_bidan();
         rObat = new Laporan_DataObat();
         rKaryawan = new Laporan_karyawan();
     }
