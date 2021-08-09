@@ -30,7 +30,7 @@ public class Fasilitas extends javax.swing.JInternalFrame {
     
  
     /**
-     * Creates new form Dokter
+     * Creates new form 
      */
     public Fasilitas() {
         initComponents();

@@ -14,9 +14,12 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/image/home.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Beranda"/>
+            <Property name="text" type="java.lang.String" value="BERANDA    |"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -31,7 +34,7 @@
                   <Color blue="66" green="66" red="0" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Informasi Umum"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -50,7 +53,7 @@
                   <Color blue="66" green="66" red="0" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Fasilitas"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -64,7 +67,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuPendaftaran">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pendaftaran"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -82,19 +85,22 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/image/layanan2.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Pelayanan"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
+            </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="iconTextGap" type="int" value="8"/>
+            <Property name="label" type="java.lang.String" value="PELAYANAN    |"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuPoliUmum">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Poli Umum"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -110,7 +116,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuPoliGigi">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Poli Gigi"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -126,7 +132,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuBidan">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pelayanan Bidan"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -146,9 +152,12 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/image/biaya.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Informasi Biaya"/>
+            <Property name="text" type="java.lang.String" value="INFORMASI BIAYA   |"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="iconTextGap" type="int" value="8"/>
@@ -164,19 +173,22 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/image/laporan.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Laporan"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
+            </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="iconTextGap" type="int" value="8"/>
+            <Property name="label" type="java.lang.String" value="LAPORAN"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="DataPoliUmum">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Data Pasien PoliUmum"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -192,7 +204,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="DataPoliGigi">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Data Pasien PoliGigi"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -208,7 +220,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="DataPelyananBidan">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Data Pasien Layanan Bidan"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -224,7 +236,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="DataObat">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Data Obat"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -240,7 +252,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="karyawan">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/image/menu.png"/>
+                  <Image iconType="3" name="/image/cek.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Data Karyawan"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -297,7 +309,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" pref="579" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="576" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>

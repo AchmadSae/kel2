@@ -40,7 +40,7 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
        public void tableBiaya(){
         Object baris[]={"ID Poli Gigi", " Tanggal Berobat ", " Keluhan ", "Nama Dokter", "Diagnosa ", "Resep Obat", "ID Pasien", "Jenis Berobat"};
         tablemodel = new DefaultTableModel(null, baris);
-        tabel_poliumum.setModel(tablemodel);
+        tabel_poligigi.setModel(tablemodel);
         String sql = " select * from rm_poligigi order by id_poligigi asc";
         try{
             java.sql.Statement put = Conn.createStatement();
@@ -89,6 +89,7 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         id_poligigi = new javax.swing.JTextField();
@@ -112,33 +113,45 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
         jenis_berobat = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tabel_poliumum = new javax.swing.JTable();
+        tabel_poligigi = new javax.swing.JTable();
         print = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        load = new javax.swing.JLabel();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
         setPreferredSize(new java.awt.Dimension(1541, 800));
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 0));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Laporan Data Pasien Poli Umum");
+        jLabel4.setText("Laporan Data Pasien Poli Gigi");
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/report.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(22, 22, 22))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel4)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(153, 255, 153));
@@ -232,20 +245,24 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel5))
                             .addGap(50, 50, 50)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tgl_berobat, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nama_dokter, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
-                                    .addComponent(keluhan)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(Ubah, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(53, 53, 53)
-                                        .addComponent(Hapus1)
-                                        .addGap(51, 51, 51)
-                                        .addComponent(Simpan1))
-                                    .addComponent(diagnosa, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
-                                    .addComponent(id_pasien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jenis_berobat, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))))
+                                .addComponent(jenis_berobat, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tgl_berobat, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(nama_dokter, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                                            .addComponent(keluhan)
+                                            .addComponent(diagnosa, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                                            .addComponent(id_pasien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))
+                                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(Ubah, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(55, 55, 55)
+                                    .addComponent(Hapus1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Simpan1)
+                                    .addGap(8, 8, 8)))))
                     .addComponent(jLabel15))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
@@ -284,19 +301,18 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jenis_berobat, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(107, 107, 107)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Hapus1)
-                        .addComponent(Ubah, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Ubah, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Hapus1)
                     .addComponent(Simpan1))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(153, 255, 153));
 
-        tabel_poliumum.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tabel_poliumum.setModel(new javax.swing.table.DefaultTableModel(
+        tabel_poligigi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tabel_poligigi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -313,13 +329,13 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "", "Title 8"
             }
         ));
-        tabel_poliumum.setRowHeight(25);
-        tabel_poliumum.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabel_poligigi.setRowHeight(25);
+        tabel_poligigi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabel_poliumumMouseClicked(evt);
+                tabel_poligigiMouseClicked(evt);
             }
         });
-        jScrollPane3.setViewportView(tabel_poliumum);
+        jScrollPane3.setViewportView(tabel_poligigi);
 
         print.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         print.setText("CETAK");
@@ -333,6 +349,14 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("TABEL DATA POLI GIGI KLINIK PEKAPURAN");
 
+        load.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reload.png"))); // NOI18N
+        load.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        load.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loadMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -340,38 +364,47 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(load)
+                        .addGap(101, 101, 101)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 912, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(297, 297, 297)
-                        .addComponent(print, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(jLabel1)))
-                .addContainerGap(238, Short.MAX_VALUE))
+                        .addGap(401, 401, 401)
+                        .addComponent(print, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(load)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(print, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(2, 2, 2))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,8 +412,8 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -413,28 +446,31 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_Simpan1ActionPerformed
 
-    private void tabel_poliumumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabel_poliumumMouseClicked
+    private void tabel_poligigiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabel_poligigiMouseClicked
                 // TODO add your handling code here:
       SimpleDateFormat tglview = new SimpleDateFormat("yyyy-MM-dd");   
         
-     //if (evt.getClickCount()==1) { 
+        
         Date dateView = null;
-        int baris = tabel_poliumum.getSelectedRow();
+        int baris = tabel_poligigi.getSelectedRow();
         try {
-                dateView = tglview.parse((String) tabel_poliumum.getValueAt(baris, 1));
+                dateView = tglview.parse((String) tabel_poligigi.getValueAt(baris, 1));
             } catch (ParseException ex) {
                 Logger.getLogger(Laporan_poligigi.class.getName()).log(Level.SEVERE, null, ex);
             }
         
-        id_poligigi.setText(tabel_poliumum.getModel().getValueAt(baris, 0).toString());
+        
+        id_poligigi.setText(tabel_poligigi.getModel().getValueAt(baris, 0).toString());
          tgl_berobat.setDate(dateView);
-        keluhan.setText(tabel_poliumum.getModel().getValueAt(baris, 2).toString());
-        nama_dokter.setText(tabel_poliumum.getModel().getValueAt(baris, 3).toString());
-        diagnosa.setText(tabel_poliumum.getModel().getValueAt(baris, 4).toString());
-        resep_obat.setText(tabel_poliumum.getModel().getValueAt(baris, 5).toString());
-        id_pasien.setText(tabel_poliumum.getModel().getValueAt(baris, 6).toString());
-        jenis_berobat.setText(tabel_poliumum.getModel().getValueAt(baris, 7).toString());
-    }//GEN-LAST:event_tabel_poliumumMouseClicked
+        keluhan.setText(tabel_poligigi.getModel().getValueAt(baris, 2).toString());
+        nama_dokter.setText(tabel_poligigi.getModel().getValueAt(baris, 3).toString());
+        diagnosa.setText(tabel_poligigi.getModel().getValueAt(baris, 4).toString());
+        resep_obat.setText(tabel_poligigi.getModel().getValueAt(baris, 5).toString());
+        id_pasien.setText(tabel_poligigi.getModel().getValueAt(baris, 6).toString());
+        jenis_berobat.setText(tabel_poligigi.getModel().getValueAt(baris, 7).toString());
+        
+        
+    }//GEN-LAST:event_tabel_poligigiMouseClicked
 
     private void UbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UbahActionPerformed
 
@@ -527,6 +563,10 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_keluhanActionPerformed
 
+    private void loadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loadMouseClicked
+        tableBiaya();
+    }//GEN-LAST:event_loadMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Hapus1;
@@ -545,6 +585,7 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -552,10 +593,11 @@ public class Laporan_poligigi extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField jenis_berobat;
     private javax.swing.JTextField keluhan;
+    private javax.swing.JLabel load;
     private javax.swing.JTextField nama_dokter;
     private javax.swing.JButton print;
     private javax.swing.JTextArea resep_obat;
-    private javax.swing.JTable tabel_poliumum;
+    private javax.swing.JTable tabel_poligigi;
     private com.toedter.calendar.JDateChooser tgl_berobat;
     // End of variables declaration//GEN-END:variables
 }
