@@ -4,6 +4,18 @@
  * and open the template in the editor.
  */
 package KlinikPekapuran;
+import KlinikPekapuran.utama.Pendaftaran;
+import KlinikPekapuran.utama.Fasilitas;
+import KlinikPekapuran.utama.InformasiUmum;
+import KlinikPekapuran.transaksi.Biaya;
+import KlinikPekapuran.laporan.Laporan_poligigi;
+import KlinikPekapuran.laporan.Laporan_poliUmum;
+import KlinikPekapuran.laporan.Laporan_karyawan;
+import KlinikPekapuran.laporan.Laporan_bidan;
+import KlinikPekapuran.laporan.Laporan_DataObat;
+import KlinikPekapuran.pelayanan.Bidan;
+import KlinikPekapuran.pelayanan.PoliUmum;
+import KlinikPekapuran.pelayanan.PoliGigi;
 import java.sql.*;
 import javax.swing.JFrame;
 
