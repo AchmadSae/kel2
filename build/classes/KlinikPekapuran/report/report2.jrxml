@@ -24,13 +24,17 @@
 			<staticText>
 				<reportElement style="Title" x="0" y="13" width="263" height="33"/>
 				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[DATA OBAT]]></text>
+				<text><![CDATA[Klinuk Pekapuran]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="SubTitle" x="100" y="46" width="174" height="22"/>
 				<textElement/>
-				<text><![CDATA[KLINIK PEKAPURAN]]></text>
+				<text><![CDATA[Laporan Data Obat]]></text>
 			</staticText>
+			<image>
+				<reportElement x="274" y="0" width="279" height="70"/>
+				<imageExpression><![CDATA["A:\\temporary_project\\NetBeansProjects\\Kel2\\src\\image\\green.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>

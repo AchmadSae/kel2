@@ -7,11 +7,10 @@
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
 	<style name="Detail" fontName="Arial" fontSize="12"/>
-	<parameter name="id_poliumum" class="java.lang.String"/>
-	<queryString>
-		<![CDATA[SELECT * FROM rm_poliumum]]>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM rm_bidan]]>
 	</queryString>
-	<field name="id_poliumum" class="java.lang.String"/>
+	<field name="id_bidan" class="java.lang.String"/>
 	<field name="tgl_berobat" class="java.sql.Date"/>
 	<field name="keluhan" class="java.lang.String"/>
 	<field name="nama_dokter" class="java.lang.String"/>
@@ -27,13 +26,17 @@
 			<staticText>
 				<reportElement style="Title" x="0" y="13" width="263" height="33"/>
 				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Leaf Green Title]]></text>
+				<text><![CDATA[KLINIK PEKAPURAN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="SubTitle" x="100" y="46" width="174" height="22"/>
+				<reportElement style="SubTitle" x="100" y="46" width="226" height="22"/>
 				<textElement/>
-				<text><![CDATA[Leaf Green SubTitle]]></text>
+				<text><![CDATA[DATA PELAYANAN BIDAN]]></text>
 			</staticText>
+			<image>
+				<reportElement x="342" y="13" width="210" height="54"/>
+				<imageExpression><![CDATA["A:\\temporary_project\\NetBeansProjects\\Kel2\\src\\image\\green.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -50,7 +53,7 @@
 			<staticText>
 				<reportElement style="Column header" x="0" y="19" width="69" height="15"/>
 				<textElement/>
-				<text><![CDATA[id_poliumum]]></text>
+				<text><![CDATA[id_bidan]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="69" y="19" width="69" height="15"/>
@@ -100,7 +103,7 @@
 			<textField>
 				<reportElement style="Detail" x="0" y="0" width="69" height="15"/>
 				<textElement/>
-				<textFieldExpression><![CDATA[$F{id_poliumum}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{id_bidan}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement style="Detail" x="69" y="0" width="69" height="15"/>

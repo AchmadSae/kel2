@@ -4,6 +4,20 @@
  * and open the template in the editor.
  */
 package KlinikPekapuran;
+import KlinikPekapuran.utama.Pendaftaran;
+import KlinikPekapuran.utama.Fasilitas;
+import KlinikPekapuran.utama.InformasiUmum;
+import KlinikPekapuran.transaksi.Biaya;
+import KlinikPekapuran.laporan.Laporan_poligigi;
+import KlinikPekapuran.laporan.Laporan_poliUmum;
+import KlinikPekapuran.laporan.Laporan_karyawan;
+import KlinikPekapuran.laporan.Laporan_bidan;
+import KlinikPekapuran.laporan.Laporan_DataObat;
+import KlinikPekapuran.pelayanan.Bidan;
+import KlinikPekapuran.pelayanan.PoliUmum;
+import KlinikPekapuran.pelayanan.PoliGigi;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.sql.*;
 import javax.swing.JFrame;
 
@@ -23,9 +37,9 @@ public class MenuUtama extends javax.swing.JFrame {
     
     Biaya Biaya;
     
-    Laporan_DataPasien_PoliUmum rPoliUmum;
-    Laporan_DataPasien_PoliGigi rPoliGigi;
-    Laporan_DataPasien_Bidan rBidan;
+    Laporan_poliUmum rPoliUmum;
+    Laporan_poligigi rPoliGigi;
+    Laporan_bidan rBidan;
     Laporan_DataObat rObat;
     Laporan_karyawan rKaryawan;
     
@@ -42,9 +56,9 @@ public class MenuUtama extends javax.swing.JFrame {
         
         Biaya = new Biaya();
         
-        rPoliUmum= new Laporan_DataPasien_PoliUmum();
-        rPoliGigi= new Laporan_DataPasien_PoliGigi();
-        rBidan= new Laporan_DataPasien_Bidan();
+        rPoliUmum= new Laporan_poliUmum();
+        rPoliGigi= new Laporan_poligigi();
+        rBidan= new Laporan_bidan();
         rObat = new Laporan_DataObat();
         rKaryawan = new Laporan_karyawan();
     }
@@ -55,7 +69,10 @@ public class MenuUtama extends javax.swing.JFrame {
     public MenuUtama() {
         initComponents();
         initForm();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+      
+        Toolkit kit = getToolkit();
+        Dimension size = kit.getScreenSize();
+        setLocation(size.width/2 - getWidth()/2, size.height/2 - getHeight()/2);
     }
 
     /**
@@ -163,8 +180,9 @@ public class MenuUtama extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(204, 255, 102));
 
         DataInduk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/home.png"))); // NOI18N
-        DataInduk.setText("Beranda");
+        DataInduk.setText("BERANDA    |");
         DataInduk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DataInduk.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         DataInduk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DataInduk.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         DataInduk.setIconTextGap(10);
@@ -172,7 +190,7 @@ public class MenuUtama extends javax.swing.JFrame {
         DataInduk.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         InformasiUmum.setBackground(new java.awt.Color(0, 102, 102));
-        InformasiUmum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        InformasiUmum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         InformasiUmum.setText("Informasi Umum");
         InformasiUmum.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         InformasiUmum.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -185,7 +203,7 @@ public class MenuUtama extends javax.swing.JFrame {
         DataInduk.add(InformasiUmum);
 
         menuFasilitas.setBackground(new java.awt.Color(0, 102, 102));
-        menuFasilitas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        menuFasilitas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         menuFasilitas.setText("Fasilitas");
         menuFasilitas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuFasilitas.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +213,7 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         DataInduk.add(menuFasilitas);
 
-        menuPendaftaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        menuPendaftaran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         menuPendaftaran.setText("Pendaftaran");
         menuPendaftaran.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuPendaftaran.addActionListener(new java.awt.event.ActionListener() {
@@ -208,13 +226,14 @@ public class MenuUtama extends javax.swing.JFrame {
         jMenuBar1.add(DataInduk);
 
         Pelayanan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/layanan2.png"))); // NOI18N
-        Pelayanan.setText("Pelayanan");
         Pelayanan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Pelayanan.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         Pelayanan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Pelayanan.setIconTextGap(8);
+        Pelayanan.setLabel("PELAYANAN    |");
         Pelayanan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        menuPoliUmum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        menuPoliUmum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         menuPoliUmum.setText("Poli Umum");
         menuPoliUmum.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuPoliUmum.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -226,7 +245,7 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         Pelayanan.add(menuPoliUmum);
 
-        menuPoliGigi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        menuPoliGigi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         menuPoliGigi.setText("Poli Gigi");
         menuPoliGigi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuPoliGigi.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -238,7 +257,7 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         Pelayanan.add(menuPoliGigi);
 
-        menuBidan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        menuBidan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         menuBidan.setText("Pelayanan Bidan");
         menuBidan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuBidan.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -253,8 +272,9 @@ public class MenuUtama extends javax.swing.JFrame {
         jMenuBar1.add(Pelayanan);
 
         MenuBiaya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/biaya.png"))); // NOI18N
-        MenuBiaya.setText("Informasi Biaya");
+        MenuBiaya.setText("INFORMASI BIAYA   |");
         MenuBiaya.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MenuBiaya.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         MenuBiaya.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         MenuBiaya.setIconTextGap(8);
         MenuBiaya.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -271,13 +291,14 @@ public class MenuUtama extends javax.swing.JFrame {
         jMenuBar1.add(MenuBiaya);
 
         Laporan2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/laporan.png"))); // NOI18N
-        Laporan2.setText("Laporan");
         Laporan2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Laporan2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         Laporan2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Laporan2.setIconTextGap(8);
+        Laporan2.setLabel("LAPORAN");
         Laporan2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        DataPoliUmum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        DataPoliUmum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         DataPoliUmum.setText("Data Pasien PoliUmum");
         DataPoliUmum.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         DataPoliUmum.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -289,7 +310,7 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         Laporan2.add(DataPoliUmum);
 
-        DataPoliGigi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        DataPoliGigi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         DataPoliGigi.setText("Data Pasien PoliGigi");
         DataPoliGigi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         DataPoliGigi.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -301,7 +322,7 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         Laporan2.add(DataPoliGigi);
 
-        DataPelyananBidan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        DataPelyananBidan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         DataPelyananBidan.setText("Data Pasien Layanan Bidan");
         DataPelyananBidan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         DataPelyananBidan.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -313,7 +334,7 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         Laporan2.add(DataPelyananBidan);
 
-        DataObat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        DataObat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         DataObat.setText("Data Obat");
         DataObat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         DataObat.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -325,7 +346,7 @@ public class MenuUtama extends javax.swing.JFrame {
         });
         Laporan2.add(DataObat);
 
-        karyawan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        karyawan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cek.png"))); // NOI18N
         karyawan.setText("Data Karyawan");
         karyawan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         karyawan.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -349,7 +370,7 @@ public class MenuUtama extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
         );
 
         pack();
